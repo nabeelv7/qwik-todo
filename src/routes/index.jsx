@@ -68,11 +68,11 @@ export const TodoItem = component$(({ todo, index }) => {
 })
 
 export const head = {
-  title: "Welcome to Qwik",
+  title: "📝 Todo App",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "Todo App made w/ Qwik.js",
     },
   ],
 };
