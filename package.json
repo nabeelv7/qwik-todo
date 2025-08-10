@@ -11,7 +11,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",
+    "build.server": "vite build -c adapters/fastify/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
@@ -20,10 +20,19 @@
     "deploy": "vercel deploy",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "drizzle:check": "drizzle-kit check",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:pull": "drizzle-kit pull",
+    "drizzle:push": "drizzle-kit push",
+    "drizzle:studio": "drizzle-kit studio",
+    "drizzle:up": "drizzle-kit up",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "postinstall": "drizzle-kit generate",
     "preview": "qwik build preview && vite preview --open",
+    "serve": "node server/entry.fastify",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
@@ -32,10 +41,13 @@
     "@builder.io/qwik-city": "^1.15.0",
     "@eslint/js": "latest",
     "@tailwindcss/vite": "^4.0.0",
+    "@types/better-sqlite3": "^7.6.12",
     "@types/minimatch": "^6.0.0",
     "@types/node": "20.14.11",
+    "better-sqlite3": "^11.8.1",
     "daisyui": "^5.0.50",
-    "drizzle-kit": "^0.31.4",
+    "dotenv": "^16.3.2",
+    "drizzle-kit": "^0.30.3",
     "eslint": "9.25.1",
     "eslint-plugin-qwik": "^1.15.0",
     "globals": "16.0.0",
@@ -51,8 +63,12 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
+    "@fastify/compress": "^6.2.1",
+    "@fastify/static": "^6.10.1",
     "@fontsource-variable/dm-sans": "^5.2.6",
     "@libsql/client": "^0.15.10",
-    "drizzle-orm": "^0.44.4"
+    "drizzle-orm": "^0.44.4",
+    "fastify": "^4.17.0",
+    "fastify-plugin": "^4.5.0"
   }
 }
