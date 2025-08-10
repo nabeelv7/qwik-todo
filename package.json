@@ -32,6 +32,7 @@
     "@builder.io/qwik-city": "^1.15.0",
     "@eslint/js": "latest",
     "@tailwindcss/vite": "^4.0.0",
+    "@types/minimatch": "^6.0.0",
     "@types/node": "20.14.11",
     "daisyui": "^5.0.50",
     "drizzle-kit": "^0.31.4",
